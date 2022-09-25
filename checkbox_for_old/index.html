@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Красивый чекбокс в старых не отобразится</title>
+    <style>
+        /* В старых :enabled, :disabled не работает(стили не применятся) */
+        .checkbox input:enabled,
+        .checkbox input:disabled {
+            display: none;
+        }
+        .checkbox input:enabled + .control-indicator,
+        .checkbox input:disabled + .control-indicator {
+            display: inline-block;
+            border: 3px solid black;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        /* В старых :checked не работает(стили не применятся) */
+        .checkbox input:checked + .control-indicator {
+            background-color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://echo.htmlacademyzzz.ru" method="post">
+        <label class="control checkbox">
+            <input type="checkbox">
+            <span class="control-indicator"></span>
+            Щёлкни меня!
+        </label>
+    </form>
+</body>
+</html>
